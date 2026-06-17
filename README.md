@@ -4,9 +4,11 @@ A work-in-progress haptic feedback system that translates mouse input and detect
 
 The goal is to prototype physical recoil feedback for games using a safe serial-command layer. The Python controller reads mouse input and optional screen OCR, selects a recoil profile, and sends simple one-byte commands to an Arduino sketch that controls solenoid pulse timing.
 
-## Demo Status
+## Demo
 
-This repo is currently documented as a hardware prototype. The next portfolio upgrade is adding a short demo video or photo of the Arduino/solenoid setup.
+[Watch the LinkedIn demo](https://www.linkedin.com/posts/kennedynguyen216_arduino-solenoid-computerscience-activity-7461477777280581632-5NQW?utm_source=share&utm_medium=member_desktop&rcm=ACoAAF8fJLQBrwnGUubY5rvjq77M4HRz8dQfgTA)
+
+This repo is documented as a hardware prototype, and the demo shows the Arduino/solenoid feedback loop responding to the recoil controller.
 
 ## How It Works
 
