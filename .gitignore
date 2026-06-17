@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Local secrets and machine-specific settings
+.env
+CHAD/.env
+jarvis_presets.json
+CHAD/jarvis_presets.json
+
+# Generated camera captures / debug artifacts
+jarvis_*_capture.jpg
+jarvis_board_scan_*.jpg
+CHAD/jarvis_*_capture.jpg
+CHAD/jarvis_board_scan_*.jpg
+CHAD/jarvis_vision_test.jpg
+CHAD/jarvis_solve_capture.jpg
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+

@@ -1,0 +1,13 @@
+google-genai
+mss
+numpy
+opencv-python
+Pillow
+PyAudio
+pynput
+pyserial
+python-dotenv
+pytesseract
+pyttsx3
+SpeechRecognition
+

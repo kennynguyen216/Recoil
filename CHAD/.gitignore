@@ -1,0 +1,6 @@
+.env
+__pycache__/
+*.pyc
+jarvis_vision_test.jpg
+jarvis_solve_capture.jpg
+jarvis_board_scan_*.jpg
