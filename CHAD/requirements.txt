@@ -1,8 +1,0 @@
-google-genai
-opencv-python
-Pillow
-pyserial
-pyttsx3
-SpeechRecognition
-PyAudio
-python-dotenv
