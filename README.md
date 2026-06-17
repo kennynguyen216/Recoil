@@ -4,6 +4,22 @@ A work-in-progress haptic feedback system that translates mouse input and detect
 
 The goal is to prototype physical recoil feedback for games using a safe serial-command layer. The Python controller reads mouse input and optional screen OCR, selects a recoil profile, and sends simple one-byte commands to an Arduino sketch that controls solenoid pulse timing.
 
+## Demo Status
+
+This repo is currently documented as a hardware prototype. The next portfolio upgrade is adding a short demo video or photo of the Arduino/solenoid setup.
+
+## How It Works
+
+```mermaid
+flowchart LR
+    Mouse["Left mouse input"] --> Python["Python recoil controller"]
+    Screen["Screen capture/OCR"] --> Python
+    Python --> Profile["Weapon profile selection"]
+    Profile --> Serial["One-byte serial command"]
+    Serial --> Arduino["Arduino sketch"]
+    Arduino --> Solenoid["Solenoid pulse"]
+```
+
 **Highlights**
 
 - Reads left-click input and sends serial recoil commands to an Arduino.
@@ -11,6 +27,26 @@ The goal is to prototype physical recoil feedback for games using a safe serial-
 - Can run in `--dry-run` mode for demos without hardware.
 - Uses screen OCR as an experimental weapon-detection path.
 - Keeps the hardware command protocol simple: one-byte commands mapped to pulse durations on the Arduino.
+
+## Command Protocol
+
+| Command | Example profile | Arduino behavior |
+|---|---|---|
+| `R` | Default recoil | Fires the default solenoid pulse. |
+| `V` | Vandal / M4A4-style profile | Fires a shorter rifle pulse. |
+| `P` | Phantom / M4A1-S-style profile | Fires a medium rifle pulse. |
+| `S` | Spectre / SMG-style profile | Fires a short SMG pulse. |
+| `H` | Sheriff / Deagle-style profile | Fires a heavier pistol pulse. |
+| `O` | Operator / AWP-style profile | Fires a long sniper pulse. |
+
+## What It Demonstrates
+
+| Area | Evidence in this project |
+|---|---|
+| Hardware prototyping | Python sends serial commands to an Arduino-controlled solenoid. |
+| Real-time input | Mouse input triggers hardware feedback while the app is running. |
+| Computer vision/OCR | Optional screen capture and OCR detect the active weapon profile. |
+| Safety boundaries | The controller reads pixels and mouse input only; it does not hook or inject into games. |
 
 ## Tech Stack
 
